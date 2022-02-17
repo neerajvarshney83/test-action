@@ -19,6 +19,10 @@ jobs:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: Terraform Init
+        env:
+        TERRAFORM_VERSION: "0.15.0"
+        TFLINT_VERSION: "v0.28.0"
+        TFSEC_VERSION: "v0.39.24"
         id: init
         run: terraform init
       
