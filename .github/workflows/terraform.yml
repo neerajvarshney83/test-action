@@ -1,26 +1,11 @@
 name: "Terraform"
-
 on:
+  push:
+    branches:
+      - main
   pull_request:
     paths:
-    - 'terraform/**'
-    types:
-    - opened
-    - reopened
-    - edited
-    - synchronize
-    - ready_for_review
-    - labeled
-    - unlabeled
-    - unlocked
-  pull_request_review:
-    types:
-    - submitted
-  check_suite:
-    types:
-    - completed
-  status: {}
-
+      - 'terraform/**'
 jobs:
   terraform:
     name: "Terraform"
